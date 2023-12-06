@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        .contact-box {
+            max-width: 860px;
+            display: flex;
+            grid-gap: 30px;
+            grid-template-columns: repeat(2, 2fr);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/214/736/958/abstract-3d-dark-digital-art-wallpaper-thumb.jpg);
+            box-shadow: 0px 0px 18px 5px black;
+
+        }
+        .left i{
+            width: 40px;
+        }
+
+        .right {
+            padding: 25px 40px;
+        }
+
+        h1 {
+            position: relative;
+            padding: 0 0 10px;
+            margin-bottom: 10px;
+        }
+        .left iframe{
+            width: 700px;
+            margin: 30px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-box">
+            <div class="left">
+                <i class="fa-regular fa-map"></i>
+                <h2>Google Maps</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1752.0430458677404!2d77.21004509999999!3d28.567177400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1699365659744!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="right">
+                    <i class="fa-solid fa-address-book"></i>
+                    <h1>Contact us</h1>
+                    <form id="contactForm">
+                        <input type="text" id="name" class="field" placeholder="enter your name">
+                        <input type="text" id="email" class="field" placeholder="enter email">
+                        <input type="text" id="phone" class="field" placeholder="enter phone">
+                        <input type="text" id="address" class="field" placeholder="enter address">
+                        <button type="button" onclick="submitForm()">Submit</button>
+                    </form>
+    <script>
+        function submitForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+    
+            if (name === '' || email === '' || phone === '' || address === '') {
+                alert('Please fill in all fields.');
+            } else {
+                alert('Form submitted successfully!\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nAddress: ' + address);
+            }
+        }
+    </script>
+</body>
+
+</html>
